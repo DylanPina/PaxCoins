@@ -6,6 +6,7 @@ import "./App.css";
 import CoinPage from "./Pages/CoinPage";
 import HomePage from "./Pages/HomePage";
 import { makeStyles } from "@material-ui/core/styles";
+import Alert from "./components/Alert";
 
 function App() {
 	const useStyles = makeStyles(() => ({
@@ -26,6 +27,7 @@ function App() {
 					<Route path="/coins/:id" element={<CoinPage />} />
 				</Routes>
 			</div>
+			<Alert />
 		</React.Fragment>
 	);
 }

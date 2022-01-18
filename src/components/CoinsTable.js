@@ -82,7 +82,7 @@ const CoinsTable = () => {
 				<TextField label="Search For a Crypto Currency.." variant="outlined" style={{ marginBottom: 20, width: "100%" }} onChange={searchHandler} />
 				<TableContainer>
 					{loading ? (
-						<LinearProgress style={{ background: "gold" }} />
+						<LinearProgress style={{ background: "rgba(139, 69, 255, 0.8)" }} />
 					) : (
 						<Table>
 							<TableHead style={{ backgroundColor: "rgba(139, 69, 255, 0.8)" }}>

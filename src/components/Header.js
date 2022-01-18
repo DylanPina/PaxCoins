@@ -1,9 +1,12 @@
 import React from "react";
+
 import { useNavigate } from "react-router-dom";
 import { CryptoState } from "../context/CryptoContext";
 import { AppBar, Container, Toolbar, Typography, Select, MenuItem, makeStyles, createTheme, ThemeProvider } from "@material-ui/core";
 import AuthModal from "./Authentication/AuthModal";
 import UserSidebar from "./Authentication/UserSidebar";
+
+import { ReactComponent as Logo } from "../assets/PAX_Logo.svg";
 
 const useStyles = makeStyles(() => ({
 	title: {
@@ -12,6 +15,11 @@ const useStyles = makeStyles(() => ({
 		fontFamily: "Montserrat",
 		fontWeight: "bold",
 		cursor: "pointer",
+	},
+	logo: {
+		height: "1.5rem",
+		width: "1.5rem",
+		margin: ".5rem",
 	},
 }));
 
@@ -43,8 +51,9 @@ const Header = () => {
 			<AppBar color="transparent" position="static">
 				<Container>
 					<Toolbar>
+						<Logo className={classes.logo} />
 						<Typography onClick={homePageRoute} className={classes.title} variant="h6">
-							Pax Exchange
+							PaxCoins
 						</Typography>
 						<Select
 							variant="outlined"
@@ -52,6 +61,7 @@ const Header = () => {
 								width: 100,
 								height: 40,
 								marginRight: 15,
+								border: "none",
 							}}
 							value={currency}
 							onChange={setCurrencyHandler}

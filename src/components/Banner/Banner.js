@@ -1,14 +1,24 @@
 import React from "react";
+
 import { makeStyles, Container, Typography } from "@material-ui/core";
+import { CryptoState } from "../../context/CryptoContext";
 import Carousel from "./Carousel";
 
 const useStyles = makeStyles(() => ({
 	banner: {
-		backgroundImage: "url(./Images/banner2.jpg)",
+		backgroundImage: "url(./assets/banner2.jpg)",
 		height: "100%",
 		backgroundPosition: "35% 42%",
 		backgroundSize: "cover",
 		backgroundRepeat: "no-repeat",
+	},
+	loginBlock: {
+		opacity: "0.9",
+		height: "30px",
+		backgroundColor: "rgba(139, 69, 255, 0.8)",
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
 	},
 	bannerContent: {
 		height: 400,
@@ -27,17 +37,23 @@ const useStyles = makeStyles(() => ({
 }));
 
 const Banner = () => {
+	const { user } = CryptoState();
+
 	const classes = useStyles();
 
 	return (
 		<div className={classes.banner}>
+			{!user && <div className={classes.loginBlock}>Sign in to add crypto currencies to your watchlist!</div>}
 			<Container className={classes.bannerContent}>
 				<div className={classes.tagline}>
-					<Typography variant="h2" style={{ fontWeight: "bold", marginBottom: 15, fontFamily: "Montserrat" }}>
+					<Typography variant="h2" style={{ fontWeight: "bold", marginBottom: 15, fontFamily: "Montserrat", textShadow: "5px 5px 10px black" }}>
 						PaxCoins
 					</Typography>
-					<Typography variant="subtitle2" style={{ color: "darkgrey", textTransform: "capitalize", fontFamily: "Montserrat" }}>
-						Get All the Info regarding your favorite crypto currency
+					<Typography
+						variant="h5"
+						style={{ color: "white", textTransform: "capitalize", fontFamily: "Montserrat", textShadow: "5px 5px 10px black" }}
+					>
+						All the latest information on top crypto currencies
 					</Typography>
 				</div>
 				<Carousel />

@@ -23,5 +23,5 @@ PaxCoins uses a number of open source projects to work properly:
 - [Axios] - Axios is a promise-based HTTP Client for node.js and the browser. It is isomorphic (it can run in the browser and nodejs with the same codebase).
 - [Material UI] - MUI provides a simple, customizable, and accessible library of React components. 
 - [ChartJS] - A free, open-source JavaScript library for data visualization, which supports eight chart types: bar, line, area, pie, bubble, radar, polar, and scatter.
-- 
+
 # Demo

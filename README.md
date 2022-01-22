@@ -24,4 +24,4 @@ PaxCoins uses a number of open source projects to work properly:
 - [Material UI] - MUI provides a simple, customizable, and accessible library of React components. 
 - [ChartJS] - A free, open-source JavaScript library for data visualization, which supports eight chart types: bar, line, area, pie, bubble, radar, polar, and scatter.
 
-# Demo
+## Demo

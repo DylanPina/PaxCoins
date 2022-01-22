@@ -1,5 +1,4 @@
 # PaxC️oins
-## Web application based crypto analytics tracker 
 
 PaxCoins is a web application which allows users to search the top 100 crypto currencies 
 

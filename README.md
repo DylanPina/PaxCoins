@@ -25,3 +25,7 @@ PaxCoins uses a number of open source projects to work properly:
 - [ChartJS] - A free, open-source JavaScript library for data visualization, which supports eight chart types: bar, line, area, pie, bubble, radar, polar, and scatter.
 
 ## Demo
+![MD-1](https://user-images.githubusercontent.com/77121344/150656241-c60fcaae-358e-414c-ba18-c80a2563109c.jpg)
+![MD-2](https://user-images.githubusercontent.com/77121344/150656244-cee63d71-2137-4f74-867b-280b3188e2a9.jpg)
+![MD-3](https://user-images.githubusercontent.com/77121344/150656245-b79790a6-0b3b-433d-91c6-e5de39c69934.jpg)
+![MD-4](https://user-images.githubusercontent.com/77121344/150656247-4d466395-4d58-4f93-af1a-63d80b9d28c0.jpg)

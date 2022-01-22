@@ -8,7 +8,7 @@ PaxCoins is a web application which allows users to search the top 100 crypto cu
 - Cyrpto Rankings
 - Coin Icon
 - Coin description
-- Current coin price
+- Current coin price in USD & EUR
 - Search and filter coins
 - Tracks 24 hour price change
 - Displays historical aswell as current price of the coin graphically using ChartJS

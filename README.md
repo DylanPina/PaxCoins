@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# PaxC️oins
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+PaxCoins is a web application which allows users to search the top 100 crypto currencies 
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Cyrpto Rankings
+- Coin Icon
+- Coin description
+- Current coin price in USD & EUR
+- Search and filter coins
+- Tracks 24 hour price change
+- Displays historical aswell as current price of the coin graphically using ChartJS
+- Allows user to sign in via email or google to add/remove coins from their watch list
 
-### `npm start`
+## Tech stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+PaxCoins uses a number of open source projects to work properly:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [ReactJS] - A free and open-source front-end JavaScript library for building user interfaces based on UI components.
+- [Firebase Auth] - Provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app. 
+- [Axios] - Axios is a promise-based HTTP Client for node.js and the browser. It is isomorphic (it can run in the browser and nodejs with the same codebase).
+- [Material UI] - MUI provides a simple, customizable, and accessible library of React components. 
+- [ChartJS] - A free, open-source JavaScript library for data visualization, which supports eight chart types: bar, line, area, pie, bubble, radar, polar, and scatter.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Demo
+![MD-1](https://user-images.githubusercontent.com/77121344/150656241-c60fcaae-358e-414c-ba18-c80a2563109c.jpg)
+![MD-2](https://user-images.githubusercontent.com/77121344/150656244-cee63d71-2137-4f74-867b-280b3188e2a9.jpg)
+![MD-3](https://user-images.githubusercontent.com/77121344/150656245-b79790a6-0b3b-433d-91c6-e5de39c69934.jpg)
+![MD-4](https://user-images.githubusercontent.com/77121344/150656247-4d466395-4d58-4f93-af1a-63d80b9d28c0.jpg)

@@ -23,7 +23,6 @@ PaxCoins uses a number of open-source projects to work properly:
 
 ## Demo
 ![image](https://user-images.githubusercontent.com/77121344/160295514-7bb9431d-3722-421c-aab6-0de1561e6fc8.png)
-![image](https://user-images.githubusercontent.com/77121344/160295453-1fde950d-aefc-427d-9023-01b8bb4ee3e8.png)
+![image](https://user-images.githubusercontent.com/77121344/160296988-2570ab46-2c82-4317-8f81-d7db604506d4.png)
 ![image](https://user-images.githubusercontent.com/77121344/160295496-cbb597e1-ff0b-441f-bc0a-73a09b2bbcb1.png)
-![MD-4](https://user-images.githubusercontent.com/77121344/150656247-4d466395-4d58-4f93-af1a-63d80b9d28c0.jpg)
 

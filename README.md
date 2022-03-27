@@ -1,4 +1,4 @@
-PaxCoins is a web application that allows users to search up analytical data on the top 100 crypto coins
+PaxCoins is a web application that allows users to search up analytical data on the top 100 crypto coins using the CoinGecko cryptocurrency API
 
 ## Features
 

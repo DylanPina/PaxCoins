@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 import { CryptoState } from "../context/CryptoContext";
 import { SingleCoin } from "../config/api";

@@ -44,6 +44,7 @@ const AuthModal = () => {
 
 	const handleOpen = () => {
 		setOpen(true);
+		setValue(0);
 	};
 
 	const handleClose = () => {
@@ -79,7 +80,7 @@ const AuthModal = () => {
 
 	return (
 		<div>
-			<Button variant="contained" style={{ width: 85, height: 40, backgroundColor: "rgba(139, 69, 255, 0.8)" }} onClick={handleOpen}>
+			<Button variant="contained" style={{ width: 85, height: 40, fontFamily: "Montserrat", fontWeight: 600, backgroundColor: "rgba(139, 69, 255, 0.8)" }} onClick={handleOpen}>
 				Login
 			</Button>
 			<Modal

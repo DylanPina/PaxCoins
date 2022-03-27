@@ -11,6 +11,7 @@ import { doc, setDoc } from "firebase/firestore";
 
 const useStyles = makeStyles({
 	container: {
+		backgroundColor: "rgba(10, 10, 10, 0.595)",
 		width: 350,
 		padding: 25,
 		height: "100%",
@@ -31,6 +32,7 @@ const useStyles = makeStyles({
 		height: 200,
 		cursor: "pointer",
 		backgroundColor: "rgba(139, 69, 255, 0.8)",
+		boxShadow: "0px 0px 10px black",
 		objectFit: "contain",
 	},
 	logout: {
@@ -42,7 +44,7 @@ const useStyles = makeStyles({
 	watchlist: {
 		flex: 1,
 		width: "100%",
-		backgroundColor: "grey",
+		backgroundColor: "rgba(139, 69, 255, 0.05)",
 		borderRadius: 10,
 		padding: 15,
 		paddingTop: 10,
@@ -50,7 +52,8 @@ const useStyles = makeStyles({
 		flexDirection: "column",
 		alignItems: "center",
 		gap: 12,
-		overflowY: "scroll",
+		overflowY: "auto",
+		boxShadow: "0 0 10px rgb(13, 13, 13, 0.6)",
 	},
 	coin: {
 		padding: 10,
@@ -60,7 +63,7 @@ const useStyles = makeStyles({
 		display: "flex",
 		justifyContent: "space-between",
 		alignItems: "center",
-		backgroundColor: "rgba(139, 69, 255, 0.8)",
+		backgroundColor: "rgba(139, 69, 255, 1)",
 		boxShadow: "0 0 3px black",
 	},
 });
@@ -121,7 +124,7 @@ const UserSidebar = () => {
 				<React.Fragment key={anchor}>
 					<Avatar
 						onClick={toggleDrawer(anchor, true)}
-						style={{ height: 38, width: 38, cursor: "pointer", backgroundColor: "rgba(139, 69, 255, 0.8)" }}
+						style={{ height: 38, width: 38, cursor: "pointer", backgroundColor: "rgba(139, 69, 255, 0.8)", boxShadow: "2px 2px 10px black"}}
 						src={user.photoURL}
 						alt={user.displayName || user.email}
 					/>
@@ -129,18 +132,18 @@ const UserSidebar = () => {
 						<div className={classes.container}>
 							<div className={classes.profile}>
 								<Avatar className={classes.picture} src={user.photoURL} alt={user.displayName || user.email} />
-								<span style={{ width: "100%", fontSize: 25, textAlign: "center", fontWeight: "bolder", wordWrap: "break-word" }}>
+								<span style={{ width: "100%", fontSize: 25, textAlign: "center", fontFamily: "Montserrat", fontWeight: 500, textShadow: "1px 1px 4px black"}}>
 									{user.displayName || user.email}
 								</span>
 								<div className={classes.watchlist}>
-									<span style={{ fontSize: 20, textShadow: "0 0 5px black" }}>Watch list</span>
+									<span style={{fontWeight: 600, marginBottom: 15, fontFamily: "Montserrat", textShadow: "1px 1px 4px black" }}>Watch list</span>
 									{coins.map((coin) => {
 										if (watchlist.includes(coin.id))
 											return (
 												<div className={classes.coin}>
-													<span>{coin.name}</span>
+													<span style={{fontFamily: "Montserrat"}}>{coin.name} ({coin.symbol.toUpperCase()})</span>
 													<span style={{ display: "flex", gap: 8 }}>
-														{symbol} {numberWithCommas(coin.current_price.toFixed(2))}
+														{symbol}{numberWithCommas(coin.current_price.toFixed(2))}
 														<AiFillDelete style={{ cursor: "pointer" }} fontSize="16" onClick={() => removeFromWatchlist(coin)} />
 													</span>
 												</div>

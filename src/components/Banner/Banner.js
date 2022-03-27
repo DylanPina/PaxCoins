@@ -43,7 +43,7 @@ const Banner = () => {
 
 	return (
 		<div className={classes.banner}>
-			{!user && <div className={classes.loginBlock}>Sign in to add crypto currencies to your watchlist!</div>}
+			{!user && <div className={classes.loginBlock}>Sign in to add coins to your watchlist!</div>}
 			<Container className={classes.bannerContent}>
 				<div className={classes.tagline}>
 					<Typography variant="h2" style={{ fontWeight: "bold", marginBottom: 15, fontFamily: "Montserrat", textShadow: "5px 5px 10px black" }}>
@@ -51,7 +51,7 @@ const Banner = () => {
 					</Typography>
 					<Typography
 						variant="h5"
-						style={{ color: "white", textTransform: "capitalize", fontFamily: "Montserrat", textShadow: "5px 5px 10px black" }}
+						style={{ color: "white", fontFamily: "Montserrat", textShadow: "5px 5px 10px black" }}
 					>
 						All the latest information on top crypto currencies
 					</Typography>

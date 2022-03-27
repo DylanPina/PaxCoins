@@ -1,12 +1,13 @@
 # PaxC️oins
 
-PaxCoins is a web application which allows users to search the top 100 crypto currencies 
+PaxCoins is a web application which allows users to search up analytical data on the top 100 crypto coins
 
 ## Features
 
-- Cyrpto Rankings
+- Coin Rankings
 - Coin Icon
-- Coin description
+- Coin Name & Acronym
+- Coin/Project Description
 - Current coin price in USD & EUR
 - Search and filter coins
 - Tracks 24 hour price change

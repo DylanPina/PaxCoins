@@ -2,7 +2,6 @@
 ## CoinGecko Cyrptocurrency API: [https://www.coingecko.com/en/api]
 
 ## Features
-
 - Coin Rankings
 - Coin Icon
 - Coin Name & Acronym
@@ -14,7 +13,6 @@
 - Allows users to sign in via email or google to add/remove coins from their watch list
 
 ## Tech stack
-
 PaxCoins uses a number of open-source projects to work properly:
 
 - [ReactJS] - A free and open-source front-end JavaScript library for building user interfaces based on UI components.

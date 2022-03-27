@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	paper: {
 		width: 400,
-		backgroundColor: theme.palette.background.paper,
+		backgroundColor: "#14161a",
 		color: "white",
 		borderRadius: 10,
 	},
@@ -32,6 +32,23 @@ const useStyles = makeStyles((theme) => ({
 		gap: 20,
 		fontSize: 20,
 	},
+	orContainer: {
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	orText: {
+		fontFamily: "Montserrat",
+		fontSize: 16,
+		fontWeight: 600,
+		margin: " 0px 10px",
+
+	},
+	lineStroke: {
+		width: "40%",
+		height: ".5px",
+		backgroundColor: "white"
+	}
 }));
 
 const AuthModal = () => {
@@ -106,7 +123,11 @@ const AuthModal = () => {
 						{value === 0 && <Login handleClose={handleClose} />}
 						{value === 1 && <Signup handleClose={handleClose} />}
 						<Box className={classes.google}>
-							<span>OR</span>
+							<div className={classes.orContainer}>
+								<div className={classes.lineStroke}/>
+								<span className={classes.orText}>OR</span>
+								<div className={classes.lineStroke}/>
+							</div>
 							<GoogleButton style={{ width: "100%", outline: "none" }} onClick={signInWithGoogle} />
 						</Box>
 					</div>

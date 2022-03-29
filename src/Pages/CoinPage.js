@@ -10,6 +10,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 function numberWithCommas(x) {
+	x = Number(x).toFixed(2);
 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
@@ -80,6 +81,8 @@ const CoinPage = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+	console.log(coin);
+
 	const inWatchlist = watchlist.includes(coin?.id);
 
 	const addToWatchlist = async () => {
@@ -126,7 +129,7 @@ const CoinPage = () => {
 	return (
 		<div className={classes.container}>
 			<div className={classes.sidebar}>
-				<img src={coin?.image.large} alt={coin?.name} height="200" style={{ marginBottom: 20 }} />
+				<img src={coin?.image.large} alt={coin?.name} height="200" style={{ marginBottom: 20, cursor: "pointer" }} onClick={() => window.open(`${coin.links?.homepage?.[0]}`)}/>
 				<Typography variant="h3" className={classes.heading}>
 					{coin?.name}
 				</Typography>
@@ -167,14 +170,41 @@ const CoinPage = () => {
 						&nbsp; &nbsp;
 						<Typography variant="h5" style={{ fontFamily: "Montserrat" }}>
 							{symbol}
-							{numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()].toString().slice(0, -6))}M
+							{numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()].toString())}
 						</Typography>
 					</span>
-
+					<span style={{ display: "flex" }}>
+						<Typography variant="h5" className={classes.heading}>
+							Total Volume:
+						</Typography>
+						&nbsp; &nbsp;
+						<Typography variant="h5" style={{ fontFamily: "Montserrat" }}>
+							{symbol}
+							{numberWithCommas(coin?.market_data.total_volume[currency.toLowerCase()].toString())}
+						</Typography>
+					</span>
+					<span style={{ display: "flex" }}>
+						<Typography variant="h5" className={classes.heading}>
+							Total Supply:
+						</Typography>
+						&nbsp; &nbsp;
+						<Typography variant="h5" style={{ fontFamily: "Montserrat" }}>
+							{numberWithCommas(coin?.market_data.total_supply.toString())}
+						</Typography>
+					</span>
+					<span style={{ display: "flex" }}>
+						<Typography variant="h5" className={classes.heading}>
+							Circulating Supply:
+						</Typography>
+						&nbsp; &nbsp;
+						<Typography variant="h5" style={{ fontFamily: "Montserrat" }}>
+							{numberWithCommas(coin?.market_data.circulating_supply.toString())}
+						</Typography>
+					</span>
 					{user && (
 						<Button
 							variant="outlined"
-							style={{ width: "100%", height: 40, backgroundColor: inWatchlist ? "#ff0000" : "rgba(139, 69, 255, 0.8)" }}
+							style={{ width: "100%", height: 40, borderRadius: "50px", backgroundColor: inWatchlist ? "#ff0000" : "rgba(139, 69, 255, 0.8)", fontFamily: "Montserrat", fontWeight: 600}}
 							onClick={inWatchlist ? removeFromWatchlist : addToWatchlist}
 						>
 							{inWatchlist ? "Remove from watchlist" : "Add to watchlist"}

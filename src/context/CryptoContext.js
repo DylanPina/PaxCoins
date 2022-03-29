@@ -59,11 +59,6 @@ const CryptoContext = (props) => {
 		fetchCoins();
 	}, [currency]);
 
-	useEffect(() => {
-		fetchCoins();
-		console.log("Updated Coins")
-	}, [])
-
 	return (
 		<Crypto.Provider value={{ currency, symbol, setCurrency, coins, loading, fetchCoins, alert, setAlert, user, watchlist }}>
 			{props.children}

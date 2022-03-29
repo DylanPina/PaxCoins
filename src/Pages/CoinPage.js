@@ -10,7 +10,12 @@ import { doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 function numberWithCommas(x) {
-	x = Number(x).toFixed(2);
+	x = Number(x).toFixed(3);
+	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function numberWithCommasNoDecimal(x) {
+	x = Number(x).toFixed();
 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
@@ -170,7 +175,7 @@ const CoinPage = () => {
 						&nbsp; &nbsp;
 						<Typography variant="h5" style={{ fontFamily: "Montserrat" }}>
 							{symbol}
-							{numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()].toString())}
+							{numberWithCommasNoDecimal(coin?.market_data.market_cap[currency.toLowerCase()].toString().slice(0, -6))}M
 						</Typography>
 					</span>
 					<span style={{ display: "flex" }}>
@@ -180,25 +185,7 @@ const CoinPage = () => {
 						&nbsp; &nbsp;
 						<Typography variant="h5" style={{ fontFamily: "Montserrat" }}>
 							{symbol}
-							{numberWithCommas(coin?.market_data.total_volume[currency.toLowerCase()].toString())}
-						</Typography>
-					</span>
-					<span style={{ display: "flex" }}>
-						<Typography variant="h5" className={classes.heading}>
-							Total Supply:
-						</Typography>
-						&nbsp; &nbsp;
-						<Typography variant="h5" style={{ fontFamily: "Montserrat" }}>
-							{numberWithCommas(coin?.market_data.total_supply.toString())}
-						</Typography>
-					</span>
-					<span style={{ display: "flex" }}>
-						<Typography variant="h5" className={classes.heading}>
-							Circulating Supply:
-						</Typography>
-						&nbsp; &nbsp;
-						<Typography variant="h5" style={{ fontFamily: "Montserrat" }}>
-							{numberWithCommas(coin?.market_data.circulating_supply.toString())}
+							{numberWithCommasNoDecimal(coin?.market_data.total_volume[currency.toLowerCase()].toString().slice(0, -6))}M
 						</Typography>
 					</span>
 					{user && (

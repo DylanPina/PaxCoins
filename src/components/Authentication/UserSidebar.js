@@ -97,8 +97,6 @@ const UserSidebar = () => {
 
 	const navigate = useNavigate();
 
-	console.log(coins);
-
 	const classes = useStyles();
 
 	const toggleDrawer = (anchor, open) => (event) => {
@@ -171,7 +169,7 @@ const UserSidebar = () => {
 									{coins.map((coin) => {
 										if (watchlist.includes(coin.id))
 											return (
-												<div className={classes.coin} 
+												<div className={classes.coin} key={coin.name}
 												onClick={() => navigate(`/coins/${coin.id}`)}>
 													<span style={{ fontFamily: "Montserrat" }}>
 														{coin.name} ({coin.symbol.toUpperCase()})

@@ -175,12 +175,30 @@ const CoinPage = () => {
 					</span>
 					<span style={{ display: "flex" }}>
 						<Typography variant="h5" className={classes.heading}>
-							Volume:
+							Total Volume:
 						</Typography>
 						&nbsp; &nbsp;
 						<Typography variant="h5" style={{ fontFamily: "Montserrat" }}>
 							{symbol}
 							{numberWithCommas(coin?.market_data.total_volume[currency.toLowerCase()].toString())}
+						</Typography>
+					</span>
+					<span style={{ display: "flex" }}>
+						<Typography variant="h5" className={classes.heading}>
+							Total Supply:
+						</Typography>
+						&nbsp; &nbsp;
+						<Typography variant="h5" style={{ fontFamily: "Montserrat" }}>
+							{numberWithCommas(coin?.market_data.total_supply.toString())}
+						</Typography>
+					</span>
+					<span style={{ display: "flex" }}>
+						<Typography variant="h5" className={classes.heading}>
+							Circulating Supply:
+						</Typography>
+						&nbsp; &nbsp;
+						<Typography variant="h5" style={{ fontFamily: "Montserrat" }}>
+							{numberWithCommas(coin?.market_data.circulating_supply.toString())}
 						</Typography>
 					</span>
 					{user && (

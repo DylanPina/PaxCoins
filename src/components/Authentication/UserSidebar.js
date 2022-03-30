@@ -7,7 +7,7 @@ import { Avatar, Button } from "@material-ui/core";
 import { signOut } from "firebase/auth";
 import { auth, db } from "../../firebase";
 import { numberWithCommas } from "../CoinsTable";
-import { AiFillDelete } from "react-icons/ai";
+import BackspaceIcon from '@material-ui/icons/Backspace';
 import { doc, setDoc } from "firebase/firestore";
 
 const useStyles = makeStyles({
@@ -78,12 +78,12 @@ const useStyles = makeStyles({
 		boxShadow: "0 0 8px black",
 	},
 	deleteIcon: {
+		marginTop: "2px",
 		cursor: "pointer",
 		fontSize: 16,
+		transition: "all 0.5s",
 		"&:hover": {
 			fill: "red",
-			fontSize: 17,
-			transform: "translateY(-0.5px)",
 		},
 	},
 });
@@ -174,10 +174,10 @@ const UserSidebar = () => {
 													<span style={{ fontFamily: "Montserrat" }}>
 														{coin.name} ({coin.symbol.toUpperCase()})
 													</span>
-													<span style={{ display: "flex", gap: 8 }}>
+													<span style={{ display: "flex", gap: 8, fontFamily: "Montserrat" }}>
 														{symbol}
 														{numberWithCommas(coin.current_price.toFixed(2))}
-														<AiFillDelete className={classes.deleteIcon} onClick={() => removeFromWatchlist(coin)} />
+														<BackspaceIcon className={classes.deleteIcon} onClick={() => removeFromWatchlist(coin)} />
 													</span>
 												</div>
 											);

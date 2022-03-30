@@ -131,7 +131,9 @@ const CoinsTable = () => {
 													{profit && "+"}
 													{numberWithCommas(row.price_change_percentage_24h.toFixed(2))}%
 													<br />
-													{profit ? "+" : "-"}{symbol}{Math.abs(row.price_change_24h.toFixed(5))}
+													{profit ? "+" : "-"}
+													{symbol}
+													{Math.abs(row.price_change_24h.toFixed(5))}
 												</TableCell>
 												<TableCell align="right">
 													{symbol}

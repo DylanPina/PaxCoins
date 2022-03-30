@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import "./App.css";
 import CoinPage from "./Pages/CoinPage";
 import HomePage from "./Pages/HomePage";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from '@mui/styles/makeStyles';
 import Alert from "./components/Alert";
 
 function App() {

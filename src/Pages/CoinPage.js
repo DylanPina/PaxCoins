@@ -4,7 +4,8 @@ import axios from "axios";
 
 import { CryptoState } from "../context/CryptoContext";
 import { SingleCoin } from "../config/api";
-import { Button, LinearProgress, makeStyles, Typography } from "@material-ui/core";
+import { Button, LinearProgress, Typography } from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
 import CoinInfo from "../components/CoinInfo";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
@@ -33,14 +34,14 @@ const CoinPage = () => {
 	const useStyles = makeStyles((theme) => ({
 		container: {
 			display: "flex",
-			[theme.breakpoints.down("md")]: {
+			"@media (max-width: 1279.95px)": {
 				flexDirection: "column",
 				alignItems: "center",
 			},
 		},
 		sidebar: {
 			width: "30%",
-			[theme.breakpoints.down("md")]: {
+			"@media (max-width: 1279.95px)": {
 				width: "100%",
 			},
 			display: "flex",
@@ -67,15 +68,15 @@ const CoinPage = () => {
 			padding: 25,
 			paddingTop: 10,
 			width: "100%",
-			[theme.breakpoints.down("md")]: {
+			"@media (max-width: 1279.95px)": {
 				display: "flex",
 				justifyContent: "space-around",
 			},
-			[theme.breakpoints.down("sm")]: {
+			'@media (max-width:959.95px)': {
 				flexDirection: "column",
 				alignItems: "center",
 			},
-			[theme.breakpoints.down("xs")]: {
+			'@media (min-width:600px)': {
 				alignItems: "start",
 			},
 		},

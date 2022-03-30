@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import { CryptoState } from "../../context/CryptoContext";
-import { makeStyles } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
 import { TrendingCoins } from "../../config/api";
 import AliceCarousel from "react-alice-carousel";
 

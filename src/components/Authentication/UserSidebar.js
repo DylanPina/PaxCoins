@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
+import makeStyles from '@mui/styles/makeStyles';
+import Drawer from "@mui/material/Drawer";
 import { CryptoState } from "../../context/CryptoContext";
-import { Avatar, Button } from "@material-ui/core";
+import { Avatar, Button } from "@mui/material";
 import { signOut } from "firebase/auth";
 import { auth, db } from "../../firebase";
 import { numberWithCommas } from "../CoinsTable";
-import BackspaceIcon from '@material-ui/icons/Backspace';
+// import BackspaceIcon from '@mui/icons-material/Backspace';
 import { doc, setDoc } from "firebase/firestore";
 
 const useStyles = makeStyles({
@@ -177,7 +177,7 @@ const UserSidebar = () => {
 													<span style={{ display: "flex", gap: 8, fontFamily: "Montserrat" }}>
 														{symbol}
 														{numberWithCommas(coin.current_price.toFixed(2))}
-														<BackspaceIcon className={classes.deleteIcon} onClick={() => removeFromWatchlist(coin)} />
+														{/* <BackspaceIcon className={classes.deleteIcon} onClick={() => removeFromWatchlist(coin)} /> */}
 													</span>
 												</div>
 											);

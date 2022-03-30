@@ -1,7 +1,7 @@
-import { Snackbar } from "@material-ui/core";
+import { Snackbar } from "@mui/material";
 import React, { useState } from "react";
 import { CryptoState } from "../context/CryptoContext";
-import MuiAlert from "@material-ui/lab/Alert";
+import MuiAlert from '@mui/material/Alert';
 
 const Alert = () => {
 	const { alert, setAlert } = CryptoState();

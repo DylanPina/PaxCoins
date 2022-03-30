@@ -104,7 +104,7 @@ const CoinPage = () => {
 
 			setAlert({
 				open: true,
-				message: `${coin.name} Added to the Watchlist !`,
+				message: `${coin.name} Added to the Watchlist!`,
 				type: "success",
 			});
 		} catch (error) {
@@ -123,8 +123,8 @@ const CoinPage = () => {
 
 			setAlert({
 				open: true,
-				message: `${coin.name} Removed from the Watchlist`,
-				type: "success",
+				message: `${coin.name} Removed from the Watchlist!`,
+				type: "error",
 			});
 		} catch (error) {
 			setAlert({
@@ -155,7 +155,7 @@ const CoinPage = () => {
 				<Typography
 					variant="subtitle1"
 					className={classes.description}
-					dangerouslySetInnerHTML={{ __html: coin?.description.en.split(". ")[0] + ". " + coin?.description.en.split(". ")[1] + "." }}
+					dangerouslySetInnerHTML={{ __html: coin?.description.en.split(". ")[0] + ". " + coin?.description.en.split(". ")[1]}}
 				></Typography>
 				<div className={classes.marketData}>
 					<span style={{ display: "flex" }}>

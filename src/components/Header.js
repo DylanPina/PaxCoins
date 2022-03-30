@@ -27,7 +27,7 @@ const Header = () => {
 	const classes = useStyles();
 	const navigate = useNavigate();
 
-	const { currency, setCurrency, user } = CryptoState();
+	const { currency, setCurrency, user, symbol } = CryptoState();
 
 	const darkTheme = createTheme({
 		palette: {
@@ -61,13 +61,15 @@ const Header = () => {
 								width: 100,
 								height: 40,
 								marginRight: 15,
-								border: "none",
+								color: "white",
+								fontFamily: "Montserrat",
+								backgroundColor: "transparent",
 							}}
 							value={currency}
 							onChange={setCurrencyHandler}
 						>
-							<MenuItem value={"USD"}>USD</MenuItem>
-							<MenuItem value={"EUR"}>EUR</MenuItem>
+							<MenuItem value={"USD"}>USD $</MenuItem>
+							<MenuItem value={"EUR"}>EUR €</MenuItem>
 						</Select>
 						{user ? <UserSidebar /> : <AuthModal />}
 					</Toolbar>

@@ -88,6 +88,13 @@ const CoinPage = () => {
 
 	console.log(coin);
 
+	const high24USD = coin?.market_data.high_24h.usd.toFixed(2);
+	const high24EUR = coin?.market_data.high_24h.eur.toFixed(2);
+
+	const low24USD = coin?.market_data.low_24h.usd.toFixed(2);
+	const low24EUR = coin?.market_data.low_24h.eur.toFixed(2);
+	
+
 	const inWatchlist = watchlist.includes(coin?.id);
 
 	const addToWatchlist = async () => {
@@ -127,6 +134,7 @@ const CoinPage = () => {
 			});
 		}
 	};
+
 	const classes = useStyles();
 
 	if (!coin) return <LinearProgress style={{ backgroundColor: "rgba(139, 69, 255, 0.8)" }} />;
@@ -134,14 +142,20 @@ const CoinPage = () => {
 	return (
 		<div className={classes.container}>
 			<div className={classes.sidebar}>
-				<img src={coin?.image.large} alt={coin?.name} height="200" style={{ marginBottom: 20, cursor: "pointer" }} onClick={() => window.open(`${coin.links?.homepage?.[0]}`)}/>
+				<img
+					src={coin?.image.large}
+					alt={coin?.name}
+					height="200"
+					style={{ marginBottom: 20, cursor: "pointer" }}
+					onClick={() => window.open(`${coin.links?.homepage?.[0]}`)}
+				/>
 				<Typography variant="h3" className={classes.heading}>
 					{coin?.name}
 				</Typography>
 				<Typography
 					variant="subtitle1"
 					className={classes.description}
-					dangerouslySetInnerHTML={{ __html: coin?.description.en.split(". ")[0] }}
+					dangerouslySetInnerHTML={{ __html: coin?.description.en.split(". ")[0] + ". " + coin?.description.en.split(". ")[1] + "." }}
 				></Typography>
 				<div className={classes.marketData}>
 					<span style={{ display: "flex" }}>
@@ -150,7 +164,7 @@ const CoinPage = () => {
 						</Typography>
 						&nbsp; &nbsp;
 						<Typography variant="h5" style={{ fontFamily: "Montserrat" }}>
-							{coin?.market_cap_rank}
+							#{coin?.market_cap_rank}
 						</Typography>
 					</span>
 					<span style={{ display: "flex" }}>
@@ -166,6 +180,36 @@ const CoinPage = () => {
 						>
 							{symbol}
 							{numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()])}
+						</Typography>
+					</span>
+					<span style={{ display: "flex" }}>
+						<Typography variant="h5" className={classes.heading}>
+							24h (high):
+						</Typography>
+						&nbsp; &nbsp;
+						<Typography
+							variant="h5"
+							style={{
+								fontFamily: "Montserrat",
+							}}
+						>
+							{symbol}
+							{currency.toLowerCase() === "usd" ? high24USD : high24EUR}
+						</Typography>
+					</span>
+					<span style={{ display: "flex" }}>
+						<Typography variant="h5" className={classes.heading}>
+							24h (low):
+						</Typography>
+						&nbsp; &nbsp;
+						<Typography
+							variant="h5"
+							style={{
+								fontFamily: "Montserrat",
+							}}
+						>
+							{symbol}
+							{currency.toLowerCase() === "usd" ? low24USD : low24EUR}
 						</Typography>
 					</span>
 					<span style={{ display: "flex" }}>
@@ -191,7 +235,14 @@ const CoinPage = () => {
 					{user && (
 						<Button
 							variant="outlined"
-							style={{ width: "100%", height: 40, borderRadius: "50px", backgroundColor: inWatchlist ? "#ff0000" : "rgba(139, 69, 255, 0.8)", fontFamily: "Montserrat", fontWeight: 600}}
+							style={{
+								width: "100%",
+								height: 40,
+								borderRadius: "50px",
+								backgroundColor: inWatchlist ? "#ff0000" : "rgba(139, 69, 255, 0.8)",
+								fontFamily: "Montserrat",
+								fontWeight: 600,
+							}}
 							onClick={inWatchlist ? removeFromWatchlist : addToWatchlist}
 						>
 							{inWatchlist ? "Remove from watchlist" : "Add to watchlist"}

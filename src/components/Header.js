@@ -51,7 +51,7 @@ const Header = () => {
 			<AppBar color="transparent" position="static">
 				<Container>
 					<Toolbar>
-						<Logo className={classes.logo} />
+						<Logo className={classes.logo} onClick={homePageRoute} style={{ cursor: "pointer" }} />
 						<Typography onClick={homePageRoute} className={classes.title} variant="h6">
 							PaxCoins
 						</Typography>

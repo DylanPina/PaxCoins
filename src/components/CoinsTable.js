@@ -66,7 +66,7 @@ const CoinsTable = () => {
 	});
 
 	const searchHandler = (e) => {
-		setSearch(e.target.value);
+		setSearch(e.target.value.toLowerCase());
 	};
 
 	const handleSearch = () => {
@@ -116,18 +116,18 @@ const CoinsTable = () => {
 												<TableCell align="left" style={{ fontFamily: "Montserrat", fontSize: 20 }}>
 													#{row.market_cap_rank}
 												</TableCell>
-												<TableCell component="th" scope="row" style={{ display: "flex", gap: 15 }}>
+												<TableCell component="th" scope="row" style={{ display: "flex", gap: 15, fontFamily: "Montserrat" }}>
 													<img src={row?.image} alt={row.name} height="50" style={{ marginBottom: 10 }} />
 													<div style={{ display: "flex", flexDirection: "column" }}>
 														<span style={{ textTransform: "uppercase", fontSize: 22 }}>{row.symbol}</span>
 														<span style={{ color: "darkgrey" }}>{row.name}</span>
 													</div>
 												</TableCell>
-												<TableCell align="right">
+												<TableCell align="right" style={{fontFamily: "Montserrat"}}>
 													{symbol}
 													{numberWithCommas(row.current_price.toFixed(2))}
 												</TableCell>
-												<TableCell align="right" style={{ color: profit > 0 ? "rgb(14, 203, 129)" : "red", fontWeight: 500 }}>
+												<TableCell align="right" style={{ color: profit > 0 ? "rgb(14, 203, 129)" : "red", fontFamily: "Montserrat", fontWeight: 500 }}>
 													{profit && "+"}
 													{numberWithCommas(row.price_change_percentage_24h.toFixed(2))}%
 													<br />
@@ -135,15 +135,15 @@ const CoinsTable = () => {
 													{symbol}
 													{Math.abs(row.price_change_24h.toFixed(5))}
 												</TableCell>
-												<TableCell align="right">
+												<TableCell align="right" style={{fontFamily: "Montserrat"}}>
 													{symbol}
 													{numberWithCommas(row.market_cap.toString().slice(0, -6))}M
 												</TableCell>
-												<TableCell align="right">
+												<TableCell align="right" style={{fontFamily: "Montserrat"}}>
 													{symbol}
 													{numberWithCommas(row.high_24h.toFixed(2))}
 												</TableCell>
-												<TableCell align="right">
+												<TableCell align="right" style={{fontFamily: "Montserrat"}}>
 													{symbol}
 													{numberWithCommas(row.low_24h.toFixed(2))}
 												</TableCell>

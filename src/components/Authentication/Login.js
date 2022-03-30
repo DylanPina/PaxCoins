@@ -47,7 +47,7 @@ const Login = (props) => {
 
 			setAlert({
 				open: true,
-				message: `Sign up successful, welcome ${result.user.email}`,
+				message: `Login successful, welcome back ${result.user.email}`,
 				type: "success",
 			});
 

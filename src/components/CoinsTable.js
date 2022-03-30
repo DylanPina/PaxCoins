@@ -73,6 +73,16 @@ const CoinsTable = () => {
 		return coins.filter((coin) => coin.name.toLowerCase().includes(search) || coin.symbol.toLowerCase().includes(search));
 	};
 
+	const alignTableCells = (head) => {
+		if (head === "Name") {
+			return "left";
+		} else if (head === "Rank") {
+			return "left";
+		} else {
+			return "right";
+		}
+	};
+
 	return (
 		<ThemeProvider theme={darkTheme}>
 			<Container style={{ textAlign: "center" }}>
@@ -88,12 +98,8 @@ const CoinsTable = () => {
 						<Table>
 							<TableHead style={{ backgroundColor: "rgba(139, 69, 255, 0.8)" }}>
 								<TableRow>
-									{["Coin", "Price", "24h Change", "Market Cap"].map((head) => (
-										<TableCell
-											style={{ color: "black", fontWeight: "700", fontFamily: "Montserrat" }}
-											key={head}
-											align={head === "Coin" ? "" : "right"}
-										>
+									{["Rank", "Name", "Price", `24h Change`, "Market Cap", "High (24h)", "Low (24h)"].map((head) => (
+										<TableCell style={{ color: "black", fontWeight: "700", fontFamily: "Montserrat" }} key={head} align={alignTableCells(head)}>
 											{head}
 										</TableCell>
 									))}
@@ -107,6 +113,9 @@ const CoinsTable = () => {
 
 										return (
 											<TableRow onClick={() => navigate(`/coins/${row.id}`)} className={classes.row} key={row.name}>
+												<TableCell align="left" style={{ fontFamily: "Montserrat", fontSize: 20 }}>
+													#{row.market_cap_rank}
+												</TableCell>
 												<TableCell component="th" scope="row" style={{ display: "flex", gap: 15 }}>
 													<img src={row?.image} alt={row.name} height="50" style={{ marginBottom: 10 }} />
 													<div style={{ display: "flex", flexDirection: "column" }}>
@@ -121,10 +130,20 @@ const CoinsTable = () => {
 												<TableCell align="right" style={{ color: profit > 0 ? "rgb(14, 203, 129)" : "red", fontWeight: 500 }}>
 													{profit && "+"}
 													{numberWithCommas(row.price_change_percentage_24h.toFixed(2))}%
+													<br />
+													{profit ? "+" : "-"}{symbol}{Math.abs(row.price_change_24h.toFixed(5))}
 												</TableCell>
 												<TableCell align="right">
 													{symbol}
 													{numberWithCommas(row.market_cap.toString().slice(0, -6))}M
+												</TableCell>
+												<TableCell align="right">
+													{symbol}
+													{numberWithCommas(row.high_24h.toFixed(2))}
+												</TableCell>
+												<TableCell align="right">
+													{symbol}
+													{numberWithCommas(row.low_24h.toFixed(2))}
 												</TableCell>
 											</TableRow>
 										);

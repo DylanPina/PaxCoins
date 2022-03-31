@@ -6,6 +6,8 @@ import { CryptoState } from "../context/CryptoContext";
 import { SingleCoin } from "../config/api";
 import { Button, LinearProgress, makeStyles, Typography } from "@material-ui/core";
 import CoinInfo from "../components/CoinInfo";
+import { AiOutlineArrowDown } from "react-icons/ai";
+import { AiOutlineArrowUp } from "react-icons/ai";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
@@ -93,7 +95,8 @@ const CoinPage = () => {
 
 	const low24USD = coin?.market_data.low_24h.usd.toFixed(2);
 	const low24EUR = coin?.market_data.low_24h.eur.toFixed(2);
-	
+
+	const profit = coin?.market_data.price_change_percentage_24h > 0;
 
 	const inWatchlist = watchlist.includes(coin?.id);
 
@@ -155,7 +158,7 @@ const CoinPage = () => {
 				<Typography
 					variant="subtitle1"
 					className={classes.description}
-					dangerouslySetInnerHTML={{ __html: coin?.description.en.split(". ")[0] + ". " + coin?.description.en.split(". ")[1]}}
+					dangerouslySetInnerHTML={{ __html: coin?.description.en.split(". ")[0] + ". " + coin?.description.en.split(". ")[1] }}
 				></Typography>
 				<div className={classes.marketData}>
 					<span style={{ display: "flex" }}>
@@ -180,6 +183,22 @@ const CoinPage = () => {
 						>
 							{symbol}
 							{numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()])}
+						</Typography>
+					</span>
+					<span style={{ display: "flex" }}>
+						<Typography variant="h5" className={classes.heading}>
+							24h Change (%):
+						</Typography>
+						&nbsp; &nbsp;
+						<Typography
+							variant="h5"
+							style={{
+								fontFamily: "Montserrat",
+								color: profit > 0 ? "rgb(14, 203, 129)" : "red",
+							}}
+						>
+							{profit ? <AiOutlineArrowUp style={{ paddingTop: 5 }} /> : <AiOutlineArrowDown style={{ paddingTop: 5 }} />}
+							{numberWithCommas(coin?.market_data.price_change_percentage_24h)}%
 						</Typography>
 					</span>
 					<span style={{ display: "flex" }}>

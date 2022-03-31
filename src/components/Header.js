@@ -68,8 +68,12 @@ const Header = () => {
 							value={currency}
 							onChange={setCurrencyHandler}
 						>
-							<MenuItem value={"USD"}>USD $</MenuItem>
-							<MenuItem value={"EUR"}>EUR €</MenuItem>
+							<MenuItem value={"USD"} style={{ fontFamily: "Montserrat" }}>
+								USD $
+							</MenuItem>
+							<MenuItem value={"EUR"} style={{ fontFamily: "Montserrat" }}>
+								EUR €
+							</MenuItem>
 						</Select>
 						{user ? <UserSidebar /> : <AuthModal />}
 					</Toolbar>

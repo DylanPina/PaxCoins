@@ -71,11 +71,12 @@ const CoinPage = () => {
 			width: "100%",
 			[theme.breakpoints.down("md")]: {
 				display: "flex",
+				flexDirection: "column",
 				justifyContent: "space-around",
 			},
 			[theme.breakpoints.down("sm")]: {
 				flexDirection: "column",
-				alignItems: "center",
+				alignItems: "start",
 			},
 			[theme.breakpoints.down("xs")]: {
 				alignItems: "start",
